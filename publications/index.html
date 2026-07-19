@@ -114,6 +114,203 @@
 <!-- _layouts/bib.html -->
 <div class="row">
     <!-- Entry bib key -->
+    <div id="TaZhDe26" class="col-sm-10">
+        <!-- Author -->
+        <span class="author">
+          
+          Yiheng Tao, Yihe Zhang, Matthew Dearing, Xin Wang, Yuping Fan, Michael E. Papka, and Zhiling Lan</span>,    
+        <span class="title">Ranking Before Serving: Low-Latency LLM Serving via Pairwise Learning-to-Rank</span>,
+        <!-- Journal/Book title and date -->
+        <span class="periodical">
+            
+            
+            <em>In ISC High Performance 2026 Research Paper Proceedings (41st International Conference)</em>,
+            2026
+        </span>
+        <span class="periodical">
+            
+        </span>
+        <!-- Links/Buttons -->
+        <div class="links">
+        </div>
+  
+        
+    </div>
+</div>
+  
+<script>
+function copyBibtex(entryId) {
+    const bibtexContent = document.getElementById(`bibtex-content-${entryId}`).textContent;
+    navigator.clipboard.writeText(bibtexContent).catch(function(error) {
+        console.error("Failed to copy BibTeX entry:", error);
+    });
+}
+</script>
+  
+<style>
+/* Custom red outline button style */
+.btn-outline-red {
+    border-color: #D32F2F !important;
+    color: #D32F2F !important;
+}
+
+/* Set background color to white for BibTeX popup */
+.bibtex pre {
+    background-color: #FFFFFF !important; /* Ensures white background */
+}
+
+/* Custom styles for BibTeX entry */
+.bibtex .highlight .k { /* Adjust class name based on inspection results */
+    color: #D32F2F !important; /* Red for keywords */
+}
+
+.bibtex .highlight .s { /* Adjust class name based on inspection results */
+    color: #000000 !important; /* Dark gray for strings */
+}
+
+.bibtex .highlight .n { /* Adjust class name based on inspection results */
+    color: #000000 !important; /* Medium gray for numbers */
+}
+</style>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+    <!-- Entry bib key -->
+    <div id="Yo" class="col-sm-10">
+        <!-- Author -->
+        <span class="author">
+          
+          Ayman Yousef, Corey Wetterer-Nelson, Mengjiao Han, Victor Mateevitsi, Joseph Insley, Silvio Rizzi, Janet Knowles, Michael E. Papka, and Amanda Randles</span>,    
+        <span class="title">Instrumenting Lightweight, Modular Machine Learning Training and Inference in Parallel Solvers</span>,
+        <!-- Journal/Book title and date -->
+        <span class="periodical">
+            
+            
+            <em>In Computational Science – ICCS 2026</em>,
+            2026
+        </span>
+        <span class="periodical">
+            
+        </span>
+        <!-- Links/Buttons -->
+        <div class="links">
+                <a class="abstract btn btn-sm btn-outline-red z-depth-0" role="button">Abstract</a>
+        </div>
+  
+        <!-- Hidden abstract block -->
+        <div class="abstract hidden">
+            <p>Recent advances in exascale computing have increased the resolution and fidelity of large-scale simulations, while rapid progress in deep learning has accelerated efforts to couple machine learning with physics-based solvers. We present a lightweight, modular in situ coupling methodology that embeds machine learning training and inference directly into simulation workflows using the ParaView and Catalyst APIs. The approach provides C++/Python interoperability via a solver-side data adaptor that packages simulation state into Conduit Nodes and a Catalyst-driven Python “bridge script” that converts solver fields into NumPy/PyTorch representations with minimal intrusion into the solver code. We describe the design and instrumentation required to integrate the framework and demonstrate it within a proxy (mini-app) of the HARVEY vascular flow solver. To illustrate practical usage, we implement both in situ training and in situ inference of a point-cloud autoencoder running concurrently with the solver. We report scalability and overhead characteristics and show that the approach enables distributed online ML workflows without language unification or major solver refactoring.</p>
+        </div>
+    </div>
+</div>
+  
+<script>
+function copyBibtex(entryId) {
+    const bibtexContent = document.getElementById(`bibtex-content-${entryId}`).textContent;
+    navigator.clipboard.writeText(bibtexContent).catch(function(error) {
+        console.error("Failed to copy BibTeX entry:", error);
+    });
+}
+</script>
+  
+<style>
+/* Custom red outline button style */
+.btn-outline-red {
+    border-color: #D32F2F !important;
+    color: #D32F2F !important;
+}
+
+/* Set background color to white for BibTeX popup */
+.bibtex pre {
+    background-color: #FFFFFF !important; /* Ensures white background */
+}
+
+/* Custom styles for BibTeX entry */
+.bibtex .highlight .k { /* Adjust class name based on inspection results */
+    color: #D32F2F !important; /* Red for keywords */
+}
+
+.bibtex .highlight .s { /* Adjust class name based on inspection results */
+    color: #000000 !important; /* Dark gray for strings */
+}
+
+.bibtex .highlight .n { /* Adjust class name based on inspection results */
+    color: #000000 !important; /* Medium gray for numbers */
+}
+</style>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+    <!-- Entry bib key -->
+    <div id="ZhWuTa26" class="col-sm-10">
+        <!-- Author -->
+        <span class="author">
+          
+          Zhong Zheng, Xingfu Wu, Valerie E. Taylor, Michael E. Papka, and Zhiling Lan</span>,    
+        <span class="title">SmartCap: Coordinated CPU–GPU Power Capping for Performance-Assurance Energy Efficiency</span>,
+        <!-- Journal/Book title and date -->
+        <span class="periodical">
+            
+            
+            <em>In Proceedings of the 40th ACM International Conference on Supercomputing</em>,
+            2026
+        </span>
+        <span class="periodical">
+            
+        </span>
+        <!-- Links/Buttons -->
+        <div class="links">
+                <a class="abstract btn btn-sm btn-outline-red z-depth-0" role="button">Abstract</a>
+        </div>
+  
+        <!-- Hidden abstract block -->
+        <div class="abstract hidden">
+            <p>Large-scale systems face strict power limits when running heterogeneous CPU–GPU applications that exhibit varying responses to power caps. Existing power capping methods either target GPUs or CPUs alone or require extensive per-application profiling, making them impractical for production environments. We present SmartCap, an online framework that coordinates CPU–GPU power capping to reduce energy consumption while bounding performance degradation under a user specified threshold. SmartCap combines an offline phase, which builds a performance model and initializes a performance–power matrix, with an online phase that employs lightweight profiling and collaborative filtering to infer performance across the CPU–GPU cap space. Performance evaluation on three heterogeneous systems with a diverse workload suite shows that SmartCap achieves 95% mean prediction accuracy and as much as 20% energy savings, with negligible runtime overhead for most applications, demonstrating its practicality for performance-aware energy optimization in production environments.</p>
+        </div>
+    </div>
+</div>
+  
+<script>
+function copyBibtex(entryId) {
+    const bibtexContent = document.getElementById(`bibtex-content-${entryId}`).textContent;
+    navigator.clipboard.writeText(bibtexContent).catch(function(error) {
+        console.error("Failed to copy BibTeX entry:", error);
+    });
+}
+</script>
+  
+<style>
+/* Custom red outline button style */
+.btn-outline-red {
+    border-color: #D32F2F !important;
+    color: #D32F2F !important;
+}
+
+/* Set background color to white for BibTeX popup */
+.bibtex pre {
+    background-color: #FFFFFF !important; /* Ensures white background */
+}
+
+/* Custom styles for BibTeX entry */
+.bibtex .highlight .k { /* Adjust class name based on inspection results */
+    color: #D32F2F !important; /* Red for keywords */
+}
+
+.bibtex .highlight .s { /* Adjust class name based on inspection results */
+    color: #000000 !important; /* Dark gray for strings */
+}
+
+.bibtex .highlight .n { /* Adjust class name based on inspection results */
+    color: #000000 !important; /* Medium gray for numbers */
+}
+</style>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+    <!-- Entry bib key -->
     <div id="zhengEcoShift2026" class="col-sm-10">
         <!-- Author -->
         <span class="author">
@@ -23580,7 +23777,7 @@ function copyBibtex(entryId) {
     <footer class="fixed-bottom">
       <div class="container mt-0">
         © Copyright 2026 Michael E. Papka. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.
-Last updated: June 01, 2026.
+Last updated: July 19, 2026.
       </div>
     </footer>
 
