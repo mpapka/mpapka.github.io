@@ -7,7 +7,7 @@ Features worth exploring in the new al-folio that you should consider using.
 ### Bibliography Search
 - Built-in search bar on the publications page — visitors can filter by title, author, venue, year
 - Already enabled via `bib_search: true` in `_config.yml`
-- Uses `{% raw %}{% include bib_search.liquid %}{% endraw %}` (already added to your publications page)
+- Uses `{% include bib_search.liquid %}` (already added to your publications page)
 
 ### Teachings Collection
 - New `_teachings/` collection with structured course metadata (schedule, topics, materials, instructor, location)
@@ -52,7 +52,7 @@ Features worth exploring in the new al-folio that you should consider using.
 - Built-in book shelf layout
 
 ### Google Calendar Embedding
-- `{% raw %}{% include calendar.liquid calendar_id='...' %}{% endraw %}` on any page
+- `{% include calendar.liquid calendar_id='...' %}` on any page
 - Could be useful on your teaching or internal pages
 
 ### Medium Zoom
@@ -83,7 +83,7 @@ Features worth exploring in the new al-folio that you should consider using.
 - Display notebooks directly in pages
 
 ### Audio/Video Embedding
-- `{% raw %}{% include audio.liquid %}{% endraw %}` and `{% raw %}{% include video.liquid %}{% endraw %}` includes
+- `{% include audio.liquid %}` and `{% include video.liquid %}` includes
 
 ### Docker Development
 - `docker-compose.yml` for local development without installing Ruby/Jekyll
