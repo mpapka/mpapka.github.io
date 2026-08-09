@@ -195,10 +195,6 @@ Removed al-folio demos: `data-science-fundamentals.md`, `introduction-to-machine
 - `_books/` demo content
 - `courses/` directory (replaced by `_teachings/`)
 
-### .gitignore
-
-Added: `.claude/`, `CLAUDE.md`, `AGENTS.md`
-
 ### Other Files Added
 
 - `CUSTOMIZATIONS.md` — best practices for keeping customizations separated from upstream
