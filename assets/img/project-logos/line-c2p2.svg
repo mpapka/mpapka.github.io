@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- detector ring -->
+  <circle cx="400" cy="225" r="150" stroke-width="3.5" opacity="0.55"/>
+  <circle cx="400" cy="225" r="6" fill="#111111" stroke="none"/>
+
+  <!-- collision tracks radiating from the interaction point -->
+  <line x1="400" y1="225" x2="400" y2="70"/>
+  <path d="M400,225 C440,170 470,140 520,110" />
+  <path d="M400,225 C460,200 520,190 610,175" />
+  <line x1="400" y1="225" x2="580" y2="255"/>
+  <path d="M400,225 C450,270 500,300 560,340" />
+  <path d="M400,225 C420,290 430,330 420,390" />
+  <line x1="400" y1="225" x2="260" y2="360"/>
+  <path d="M400,225 C340,270 290,290 210,300" />
+  <line x1="400" y1="225" x2="190" y2="225"/>
+  <path d="M400,225 C350,180 300,160 230,140" />
+  <line x1="400" y1="225" x2="300" y2="95"/>
+
+  <!-- small curvature markers along a few tracks (magnetic bending) -->
+  <circle cx="520" cy="110" r="4" fill="#111111" stroke="none"/>
+  <circle cx="610" cy="175" r="4" fill="#111111" stroke="none"/>
+  <circle cx="560" cy="340" r="4" fill="#111111" stroke="none"/>
+  <circle cx="210" cy="300" r="4" fill="#111111" stroke="none"/>
+</svg>
