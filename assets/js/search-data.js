@@ -979,43 +979,43 @@ ninja.data = [{
           window.open("mailto:%70%61%70%6B%61@%75%69%63.%65%64%75", "_blank");
         },
       },{
-        id: 'social-github',
-        title: 'GitHub',
+        id: 'social-github_repo',
+        title: 'Github_repo',
         section: 'Socials',
         handler: () => {
           window.open("https://github.com/mpapka", "_blank");
         },
       },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
+        id: 'social-scholar_profile',
+        title: 'Scholar_profile',
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=pQwfBFwAAAAJ", "_blank");
         },
       },{
-        id: 'social-linkedin',
-        title: 'LinkedIn',
+        id: 'social-linkedin_profile',
+        title: 'Linkedin_profile',
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/michaelpapka", "_blank");
         },
       },{
-        id: 'social-orcid',
-        title: 'ORCID',
+        id: 'social-orcid_profile',
+        title: 'Orcid_profile',
         section: 'Socials',
         handler: () => {
           window.open("https://orcid.org/0000-0002-6418-5767", "_blank");
         },
       },{
-        id: 'social-researchgate',
-        title: 'ResearchGate',
+        id: 'social-researchgate_profile',
+        title: 'Researchgate_profile',
         section: 'Socials',
         handler: () => {
           window.open("https://www.researchgate.net/profile/Michael-Papka/", "_blank");
         },
       },{
-        id: 'social-spotify',
-        title: 'Spotify',
+        id: 'social-spotify_profile',
+        title: 'Spotify_profile',
         section: 'Socials',
         handler: () => {
           window.open("https://open.spotify.com/user/mrpizza1967", "_blank");
