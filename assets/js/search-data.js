@@ -866,9 +866,9 @@ ninja.data = [{
           section: "News",},{id: "news-teaching-edge-computing-systems-cs494-for-the-second-time-starting-fall-2026-a-repeat-of-the-spring-2026-offering-with-a-number-of-improvements",
           title: 'Teaching Edge Computing Systems (CS494) for the second time, starting Fall 2026, a...',
           description: "",
-          section: "News",},{id: "projects-hpc-research",
-          title: 'HPC Research',
-          description: "High-performance computing research in support of the ALCF supercomputers&#39; use and operations, spanning operational-data visualization, workflow monitoring, GPU programming, and HPC education.",
+          section: "News",},{id: "projects-advanced-computing-and-scientific-discovery",
+          title: 'Advanced Computing and Scientific Discovery',
+          description: "Advanced computing research supporting scientific discovery, spanning high-performance computing systems, AI and large-scale data analysis, scientific visualization, immersive computing, and emerging computing architectures.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/advrend/";
             },},{id: "projects-aimci-ai-guided-resource-management-for-advanced-cyberinfrastructure",
