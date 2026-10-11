@@ -893,7 +893,12 @@ ninja.data = [{
           section: "News",},{id: "news-moderating-the-panel-science-domains-and-trustworthy-autonomy-at-the-nsdf-summit-on-federated-autonomous-science-held-at-the-discovery-partners-institute-in-chicago-il-with-david-hart-internet2-orly-alter-university-of-utah-timo-bremer-lawrence-livermore-national-laboratory-anita-nikolich-university-of-illinois-urbana-champaign-ziyue-xu-nvidia-rudolph-pienaar-boston-children-s-hospital-and-harvard-medical-school-and-mike-kirby-university-of-utah",
           title: 'Moderating the panel Science Domains and Trustworthy Autonomy at the NSDF Summit on...',
           description: "",
-          section: "News",},{id: "projects-advanced-computing-and-scientific-discovery",
+          section: "News",},{id: "news-sc26-comes-to-chicago-our-group-has-10-papers-4-posters-and-an-art-of-hpc-piece",
+          title: 'SC26 Comes to Chicago: Our Group has 10 Papers, 4 Posters, and an...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2026_11_15-SC26/";
+            },},{id: "projects-advanced-computing-and-scientific-discovery",
           title: 'Advanced Computing and Scientific Discovery',
           description: "Advanced computing research supporting scientific discovery, spanning high-performance computing systems, AI and large-scale data analysis, scientific visualization, immersive computing, and emerging computing architectures.",
           section: "Projects",handler: () => {

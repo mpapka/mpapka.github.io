@@ -14,20 +14,16 @@ A simple, clean, and responsive Jekyll theme for academics.
 
 ## Essential Commands
 
-### Local Development (Docker)
+### Building and Deploying
 
-The recommended approach is using Docker.
+This site does not use Docker. GitHub Actions (`.github/workflows/deploy.yml`) builds and deploys the site on every push to `main` or `dev`.
+
+For a local build, `.ruby-version` pins Ruby 3.3.5 (the same version the deploy workflow uses), which chruby picks up automatically. The site needs Bundler 4.0.4, as recorded in `Gemfile.lock`:
 
 ```bash
-# Initial setup & start dev server
-docker compose pull && docker compose up
-# Site runs at http://localhost:8080
-
-# Rebuild after changing dependencies or Dockerfile
-docker compose up --build
-
-# Stop containers and free port 8080
-docker compose down
+bundle install
+bundle exec jekyll serve
+# Site runs at http://localhost:4000
 ```
 
 ### Pre-Commit Checklist
@@ -41,15 +37,9 @@ Before every commit, you **must** run these steps:
     # Format all files
     npx prettier . --write
     ```
-2.  **Build Locally & Verify:**
+2.  **Build & Verify:**
 
-    ```bash
-    # Rebuild the site
-    docker compose up --build
-
-    # Verify by visiting http://localhost:8080.
-    # Check navigation, pages, images, and dark mode.
-    ```
+    Build locally with `bundle exec jekyll build` if Ruby is set up. Otherwise push to `dev` and check the deployed site. Check navigation, pages, images, and dark mode.
 
 ## Critical Configuration
 
