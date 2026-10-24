@@ -901,7 +901,10 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2026_11_15-SC26/";
-            },},{id: "projects-advanced-computing-and-scientific-discovery",
+            },},{id: "news-speaking-at-chicago-acm-on-the-supercomputer-in-my-backyard-has-agents-6-00-pm-at-uic-s-computer-design-research-and-learning-center-cdrlc-room-1413-850-w-taylor-st-chicago-revisiting-my-2012-chicago-acm-talk-and-tracing-alcf-s-path-from-intrepid-and-mira-through-aurora-and-on-toward-helios-as-leadership-class-systems-couple-to-experiments-like-the-advanced-photon-source-in-real-time-and-ai-agents-begin-to-plan-launch-and-analyze-work-alongside-scientists",
+          title: 'Speaking at Chicago ACM on The Supercomputer in My Backyard Has Agents, 6:00...',
+          description: "",
+          section: "News",},{id: "projects-advanced-computing-and-scientific-discovery",
           title: 'Advanced Computing and Scientific Discovery',
           description: "Advanced computing research supporting scientific discovery, spanning high-performance computing systems, AI and large-scale data analysis, scientific visualization, immersive computing, and emerging computing architectures.",
           section: "Projects",handler: () => {
