@@ -9,26 +9,19 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-projects",
+  },{id: "nav-news",
+          title: "news",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-projects",
           title: "projects",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
-          },
-        },{id: "nav-people",
-          title: "people",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
-          },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
           },
         },{id: "nav-teaching",
           title: "teaching",
@@ -37,12 +30,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-news",
-          title: "news",
+        },{id: "nav-publications",
+          title: "publications",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/news/";
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-people",
+          title: "people",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/people/";
           },
         },{id: "nav-cv",
           title: "cv",
