@@ -56,7 +56,229 @@
       hideEventTypeDetails: false,
       layout: "month_view",
     });
-  </script> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">notebook demo</h1> <p class="post-description">Runnable Python in the browser, powered by marimo.</p> </header> <article> <p>This page is not linked from the site. It is a sandbox for trying runnable notebooks: the Python below runs in your browser through <a href="https://marimo.io" rel="external nofollow noopener" target="_blank">marimo</a> and WebAssembly, with nothing installed and no server behind it. The first run takes a few seconds while Python and the packages load.</p> <p>Notebooks are reactive. Move a slider and every cell that depends on it reruns. You can also edit the code in place.</p> <h2 id="amdahls-law">Amdahl’s law</h2> <p>How much faster does a program get on more processors when only part of it runs in parallel?</p> <div class="al-marimo-inline" data-height="1080px"> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">marimo</span> <span class="k">as</span> <span class="n">mo</span>
+  </script> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">notebook demo</h1> <p class="post-description">Runnable Python in the browser, powered by marimo.</p> </header> <article> <p>This page is not linked from the site. It is a sandbox for trying runnable notebooks: the Python below runs in your browser through <a href="https://marimo.io" rel="external nofollow noopener" target="_blank">marimo</a> and WebAssembly, with nothing installed and no server behind it. The first run takes a few seconds while Python and the packages load.</p> <p>Notebooks are reactive. Move a slider and every cell that depends on it reruns. You can also edit the code in place.</p> <div class="al-marimo-inline" data-height="1640px"> <div class="language-html highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;style&gt;</span>
+  <span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--uic-red</span><span class="p">:</span> <span class="nx">#d50032</span><span class="p">;</span>
+    <span class="py">--uic-red-dark</span><span class="p">:</span> <span class="nx">#a80028</span><span class="p">;</span>
+    <span class="py">--uic-navy</span><span class="p">:</span> <span class="nx">#001e62</span><span class="p">;</span>
+    <span class="py">--uic-blue</span><span class="p">:</span> <span class="nx">#00b5e2</span><span class="p">;</span>
+    <span class="py">--uic-blue-ink</span><span class="p">:</span> <span class="nx">#0a6e8a</span><span class="p">;</span>
+    <span class="py">--uic-text</span><span class="p">:</span> <span class="nx">#1f2933</span><span class="p">;</span>
+    <span class="py">--uic-muted-text</span><span class="p">:</span> <span class="nx">#5b6573</span><span class="p">;</span>
+    <span class="py">--uic-bg-subtle</span><span class="p">:</span> <span class="nx">#f6f7f9</span><span class="p">;</span>
+    <span class="py">--uic-bg-muted</span><span class="p">:</span> <span class="nx">#eef1f4</span><span class="p">;</span>
+    <span class="py">--uic-bg-navy-tint</span><span class="p">:</span> <span class="nx">#f4f7fb</span><span class="p">;</span>
+    <span class="py">--uic-bg-blue-tint</span><span class="p">:</span> <span class="nx">#f2fafd</span><span class="p">;</span>
+    <span class="py">--uic-bg-warm-tint</span><span class="p">:</span> <span class="nx">#fff8ef</span><span class="p">;</span>
+    <span class="py">--uic-border</span><span class="p">:</span> <span class="nx">#d9dee5</span><span class="p">;</span>
+    <span class="py">--uic-success</span><span class="p">:</span> <span class="nx">#2e7d32</span><span class="p">;</span>
+    <span class="py">--uic-warning</span><span class="p">:</span> <span class="nx">#a15c00</span><span class="p">;</span>
+    <span class="py">--uic-radius-sm</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="py">--uic-radius-md</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+    <span class="py">--uic-accent-width</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="py">--uic-font-ui</span><span class="p">:</span> <span class="o">-</span><span class="n">apple-system</span><span class="p">,</span> <span class="n">BlinkMacSystemFont</span><span class="p">,</span> <span class="s2">'Segoe UI'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="py">--uic-font-code</span><span class="p">:</span> <span class="s2">'SFMono-Regular'</span><span class="p">,</span> <span class="n">Menlo</span><span class="p">,</span> <span class="n">Monaco</span><span class="p">,</span> <span class="n">Consolas</span><span class="p">,</span> <span class="s2">'Liberation Mono'</span><span class="p">,</span> <span class="nb">monospace</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.dark</span> <span class="p">{</span>
+    <span class="py">--uic-red</span><span class="p">:</span> <span class="nx">#ff5c7a</span><span class="p">;</span>
+    <span class="py">--uic-red-dark</span><span class="p">:</span> <span class="nx">#ff7d93</span><span class="p">;</span>
+    <span class="py">--uic-navy</span><span class="p">:</span> <span class="nx">#a9c2ff</span><span class="p">;</span>
+    <span class="py">--uic-blue-ink</span><span class="p">:</span> <span class="nx">#6fd3ee</span><span class="p">;</span>
+    <span class="py">--uic-text</span><span class="p">:</span> <span class="nx">#e6e9ef</span><span class="p">;</span>
+    <span class="py">--uic-muted-text</span><span class="p">:</span> <span class="nx">#a3acba</span><span class="p">;</span>
+    <span class="py">--uic-bg-subtle</span><span class="p">:</span> <span class="nx">#1a1e24</span><span class="p">;</span>
+    <span class="py">--uic-bg-muted</span><span class="p">:</span> <span class="nx">#21262e</span><span class="p">;</span>
+    <span class="py">--uic-bg-navy-tint</span><span class="p">:</span> <span class="nx">#161c2a</span><span class="p">;</span>
+    <span class="py">--uic-bg-blue-tint</span><span class="p">:</span> <span class="nx">#12222a</span><span class="p">;</span>
+    <span class="py">--uic-bg-warm-tint</span><span class="p">:</span> <span class="nx">#241d12</span><span class="p">;</span>
+    <span class="py">--uic-border</span><span class="p">:</span> <span class="nx">#333a44</span><span class="p">;</span>
+    <span class="py">--uic-success</span><span class="p">:</span> <span class="nx">#6fcf7a</span><span class="p">;</span>
+    <span class="py">--uic-warning</span><span class="p">:</span> <span class="nx">#e0a458</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-text</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.65</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">code</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-code</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h1</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nt">h2</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nt">h3</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nt">h4</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.25</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.85em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">-0.01em</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1.5rem</span> <span class="m">0</span> <span class="m">0.9rem</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">0.35rem</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h2</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.35em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">650</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">2rem</span> <span class="m">0</span> <span class="m">0.6rem</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">0.2rem</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-border</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.12em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">650</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1.5rem</span> <span class="m">0</span> <span class="m">0.45rem</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">0.6rem</span><span class="p">;</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-header</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-border</span><span class="p">);</span>
+    <span class="nl">border-top</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-radius-md</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-subtle</span><span class="p">);</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.7rem</span> <span class="m">0.95rem</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="nb">wrap</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">baseline</span><span class="p">;</span>
+    <span class="nl">gap</span><span class="p">:</span> <span class="m">0.35rem</span> <span class="m">0.9rem</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.4</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-code</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red-dark</span><span class="p">);</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.95rem</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.02em</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-title</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.95rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-meta</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="nb">wrap</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">baseline</span><span class="p">;</span>
+    <span class="nl">gap</span><span class="p">:</span> <span class="m">0.35rem</span> <span class="m">0.75rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-notebook-label</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline-block</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nx">#ffffff</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.72rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.09em</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.16rem</span> <span class="m">0.5rem</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-radius-sm</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.dark</span> <span class="nc">.markdown</span> <span class="nc">.uic-notebook-label</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nx">#16305f</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nx">#edf1fa</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-term</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-unit</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-muted-text</span><span class="p">);</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.82rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-objectives</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-exercise</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-note</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-tip</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-warning</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-deliverable</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-checkpoint</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1rem</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.9rem</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-border</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-radius-md</span><span class="p">);</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.6</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-text</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">'uic-'</span><span class="o">]</span> <span class="o">&gt;</span> <span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">'uic-'</span><span class="o">]</span> <span class="o">&gt;</span> <span class="nd">:last-child</span> <span class="p">{</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-objectives</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-navy-tint</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-exercise</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-subtle</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-note</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-tip</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-blue</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-blue-tint</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-warning</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-warning</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-warm-tint</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-deliverable</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-muted</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-checkpoint</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-success</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-subtle</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">'uic-'</span><span class="o">]</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-label</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.4rem</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.76rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.08em</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-objectives</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-deliverable</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-exercise</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red-dark</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-note</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-tip</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-blue-ink</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-warning</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-warning</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-checkpoint</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-success</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.marimo-cell</span> <span class="nc">.cm-editor</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-code</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"uic-course-header"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-code"</span><span class="nt">&gt;</span>UIC CS<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-title"</span><span class="nt">&gt;</span>Runnable Notebooks<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-meta"</span>
+    <span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"uic-notebook-label"</span><span class="nt">&gt;</span>Demo 1<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-term"</span><span class="nt">&gt;</span>Fall 2026<span class="nt">&lt;/span</span>
+    <span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-unit"</span><span class="nt">&gt;</span>University of Illinois Chicago · Computer Science<span class="nt">&lt;/span&gt;&lt;/span</span>
+  <span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>Amdahl's law<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"uic-objectives"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;strong&gt;</span>Objectives<span class="nt">&lt;/strong&gt;</span>See why the serial part of a program caps its speedup, no matter how many processors you add.
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div> </div> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">marimo</span> <span class="k">as</span> <span class="n">mo</span>
 <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </code></pre></div> </div> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="n">parallel</span> <span class="o">=</span> <span class="n">mo</span><span class="p">.</span><span class="n">ui</span><span class="p">.</span><span class="nf">slider</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">parallel fraction</span><span class="sh">"</span><span class="p">)</span>
@@ -66,14 +288,238 @@
 <span class="n">speedup</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">parallel</span><span class="p">.</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="n">parallel</span><span class="p">.</span><span class="n">value</span> <span class="o">/</span> <span class="n">procs</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
-<span class="n">ax</span><span class="p">.</span><span class="nf">semilogx</span><span class="p">(</span><span class="n">procs</span><span class="p">,</span> <span class="n">speedup</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">.</span><span class="nf">axhline</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">parallel</span><span class="p">.</span><span class="n">value</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">"</span><span class="s">--</span><span class="sh">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">gray</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">semilogx</span><span class="p">(</span><span class="n">procs</span><span class="p">,</span> <span class="n">speedup</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sh">"</span><span class="s">o</span><span class="sh">"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">#001E62</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">axhline</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">parallel</span><span class="p">.</span><span class="n">value</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="sh">"</span><span class="s">--</span><span class="sh">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">#D50032</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">processors</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">speedup</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">parallel</span><span class="p">.</span><span class="n">value</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="si">}</span><span class="s"> percent parallel: speedup can never exceed </span><span class="si">{</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">parallel</span><span class="p">.</span><span class="n">value</span><span class="p">)</span><span class="si">:</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="si">}</span><span class="s">x</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">fig</span>
-</code></pre></div> </div> </div> <h2 id="a-quick-one">A quick one</h2> <div class="al-marimo-inline"> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">marimo</span> <span class="k">as</span> <span class="n">mo</span>
+</code></pre></div> </div> <div class="language-html highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"uic-exercise"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;strong&gt;</span>Try it<span class="nt">&lt;/strong&gt;</span>Set the parallel fraction to 0.99 and push the processors to the top. How close does the curve get to the dashed line, and
+  what does the last 1 in 100 cost you?
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div> </div> </div> <div class="al-marimo-inline" data-height="720px"> <div class="language-html highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;style&gt;</span>
+  <span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--uic-red</span><span class="p">:</span> <span class="nx">#d50032</span><span class="p">;</span>
+    <span class="py">--uic-red-dark</span><span class="p">:</span> <span class="nx">#a80028</span><span class="p">;</span>
+    <span class="py">--uic-navy</span><span class="p">:</span> <span class="nx">#001e62</span><span class="p">;</span>
+    <span class="py">--uic-blue</span><span class="p">:</span> <span class="nx">#00b5e2</span><span class="p">;</span>
+    <span class="py">--uic-blue-ink</span><span class="p">:</span> <span class="nx">#0a6e8a</span><span class="p">;</span>
+    <span class="py">--uic-text</span><span class="p">:</span> <span class="nx">#1f2933</span><span class="p">;</span>
+    <span class="py">--uic-muted-text</span><span class="p">:</span> <span class="nx">#5b6573</span><span class="p">;</span>
+    <span class="py">--uic-bg-subtle</span><span class="p">:</span> <span class="nx">#f6f7f9</span><span class="p">;</span>
+    <span class="py">--uic-bg-muted</span><span class="p">:</span> <span class="nx">#eef1f4</span><span class="p">;</span>
+    <span class="py">--uic-bg-navy-tint</span><span class="p">:</span> <span class="nx">#f4f7fb</span><span class="p">;</span>
+    <span class="py">--uic-bg-blue-tint</span><span class="p">:</span> <span class="nx">#f2fafd</span><span class="p">;</span>
+    <span class="py">--uic-bg-warm-tint</span><span class="p">:</span> <span class="nx">#fff8ef</span><span class="p">;</span>
+    <span class="py">--uic-border</span><span class="p">:</span> <span class="nx">#d9dee5</span><span class="p">;</span>
+    <span class="py">--uic-success</span><span class="p">:</span> <span class="nx">#2e7d32</span><span class="p">;</span>
+    <span class="py">--uic-warning</span><span class="p">:</span> <span class="nx">#a15c00</span><span class="p">;</span>
+    <span class="py">--uic-radius-sm</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="py">--uic-radius-md</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+    <span class="py">--uic-accent-width</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="py">--uic-font-ui</span><span class="p">:</span> <span class="o">-</span><span class="n">apple-system</span><span class="p">,</span> <span class="n">BlinkMacSystemFont</span><span class="p">,</span> <span class="s2">'Segoe UI'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="py">--uic-font-code</span><span class="p">:</span> <span class="s2">'SFMono-Regular'</span><span class="p">,</span> <span class="n">Menlo</span><span class="p">,</span> <span class="n">Monaco</span><span class="p">,</span> <span class="n">Consolas</span><span class="p">,</span> <span class="s2">'Liberation Mono'</span><span class="p">,</span> <span class="nb">monospace</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.dark</span> <span class="p">{</span>
+    <span class="py">--uic-red</span><span class="p">:</span> <span class="nx">#ff5c7a</span><span class="p">;</span>
+    <span class="py">--uic-red-dark</span><span class="p">:</span> <span class="nx">#ff7d93</span><span class="p">;</span>
+    <span class="py">--uic-navy</span><span class="p">:</span> <span class="nx">#a9c2ff</span><span class="p">;</span>
+    <span class="py">--uic-blue-ink</span><span class="p">:</span> <span class="nx">#6fd3ee</span><span class="p">;</span>
+    <span class="py">--uic-text</span><span class="p">:</span> <span class="nx">#e6e9ef</span><span class="p">;</span>
+    <span class="py">--uic-muted-text</span><span class="p">:</span> <span class="nx">#a3acba</span><span class="p">;</span>
+    <span class="py">--uic-bg-subtle</span><span class="p">:</span> <span class="nx">#1a1e24</span><span class="p">;</span>
+    <span class="py">--uic-bg-muted</span><span class="p">:</span> <span class="nx">#21262e</span><span class="p">;</span>
+    <span class="py">--uic-bg-navy-tint</span><span class="p">:</span> <span class="nx">#161c2a</span><span class="p">;</span>
+    <span class="py">--uic-bg-blue-tint</span><span class="p">:</span> <span class="nx">#12222a</span><span class="p">;</span>
+    <span class="py">--uic-bg-warm-tint</span><span class="p">:</span> <span class="nx">#241d12</span><span class="p">;</span>
+    <span class="py">--uic-border</span><span class="p">:</span> <span class="nx">#333a44</span><span class="p">;</span>
+    <span class="py">--uic-success</span><span class="p">:</span> <span class="nx">#6fcf7a</span><span class="p">;</span>
+    <span class="py">--uic-warning</span><span class="p">:</span> <span class="nx">#e0a458</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-text</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.65</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">code</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-code</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h1</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nt">h2</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nt">h3</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nt">h4</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.25</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.85em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">-0.01em</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1.5rem</span> <span class="m">0</span> <span class="m">0.9rem</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">0.35rem</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h2</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.35em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">650</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">2rem</span> <span class="m">0</span> <span class="m">0.6rem</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">0.2rem</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-border</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nt">h3</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.12em</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">650</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1.5rem</span> <span class="m">0</span> <span class="m">0.45rem</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">0.6rem</span><span class="p">;</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-header</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-border</span><span class="p">);</span>
+    <span class="nl">border-top</span><span class="p">:</span> <span class="m">3px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-radius-md</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-subtle</span><span class="p">);</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.7rem</span> <span class="m">0.95rem</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="nb">wrap</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">baseline</span><span class="p">;</span>
+    <span class="nl">gap</span><span class="p">:</span> <span class="m">0.35rem</span> <span class="m">0.9rem</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.4</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-code</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red-dark</span><span class="p">);</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.95rem</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.02em</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-title</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.95rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-meta</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="nb">wrap</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">baseline</span><span class="p">;</span>
+    <span class="nl">gap</span><span class="p">:</span> <span class="m">0.35rem</span> <span class="m">0.75rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-notebook-label</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline-block</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nx">#ffffff</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.72rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.09em</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.16rem</span> <span class="m">0.5rem</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-radius-sm</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.dark</span> <span class="nc">.markdown</span> <span class="nc">.uic-notebook-label</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nx">#16305f</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nx">#edf1fa</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-term</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-course-unit</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-muted-text</span><span class="p">);</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.82rem</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-objectives</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-exercise</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-note</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-tip</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-warning</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-deliverable</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-checkpoint</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1rem</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.9rem</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-border</span><span class="p">);</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-radius-md</span><span class="p">);</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-ui</span><span class="p">);</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.6</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-text</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">'uic-'</span><span class="o">]</span> <span class="o">&gt;</span> <span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">'uic-'</span><span class="o">]</span> <span class="o">&gt;</span> <span class="nd">:last-child</span> <span class="p">{</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-objectives</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-navy-tint</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-exercise</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-subtle</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-note</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-tip</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-blue</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-blue-tint</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-warning</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-warning</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-warm-tint</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-deliverable</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-muted</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-checkpoint</span> <span class="p">{</span>
+    <span class="nl">border-left</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-accent-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-success</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-bg-subtle</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s2">'uic-'</span><span class="o">]</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-label</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.4rem</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.76rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+    <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.08em</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-objectives</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-deliverable</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-navy</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-exercise</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-red-dark</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-note</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span><span class="o">,</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-tip</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-blue-ink</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-warning</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-warning</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.markdown</span> <span class="nc">.uic-checkpoint</span> <span class="o">&gt;</span> <span class="nt">strong</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-success</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.marimo-cell</span> <span class="nc">.cm-editor</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="l">--uic-font-code</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"uic-course-header"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-code"</span><span class="nt">&gt;</span>UIC CS<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-title"</span><span class="nt">&gt;</span>Runnable Notebooks<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-meta"</span>
+    <span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"uic-notebook-label"</span><span class="nt">&gt;</span>Demo 2<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-term"</span><span class="nt">&gt;</span>Fall 2026<span class="nt">&lt;/span</span>
+    <span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"uic-course-unit"</span><span class="nt">&gt;</span>University of Illinois Chicago · Computer Science<span class="nt">&lt;/span&gt;&lt;/span</span>
+  <span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>Reactive text<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"uic-tip"</span><span class="nt">&gt;&lt;strong&gt;</span>Tip<span class="nt">&lt;/strong&gt;</span>Type in the box. The cell below depends on it, so marimo reruns it on every keystroke.<span class="nt">&lt;/div&gt;</span>
+</code></pre></div> </div> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">marimo</span> <span class="k">as</span> <span class="n">mo</span>
 <span class="n">name</span> <span class="o">=</span> <span class="n">mo</span><span class="p">.</span><span class="n">ui</span><span class="p">.</span><span class="nf">text</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="sh">"</span><span class="s">EVL</span><span class="sh">"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">Your name</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">name</span>
 </code></pre></div> </div> <div class="language-python highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="n">mo</span><span class="p">.</span><span class="nf">md</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Hello, **</span><span class="si">{</span><span class="n">name</span><span class="p">.</span><span class="n">value</span><span class="si">}</span><span class="s">**! This line reruns every time you type.</span><span class="sh">"</span><span class="p">)</span>
