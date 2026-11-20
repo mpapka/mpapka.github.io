@@ -899,8 +899,8 @@ ninja.data = [{
           section: "News",},{id: "news-gave-a-nasa-tuesday-tip-talk-from-array-of-things-to-sage-a-decade-of-edge-computing-on-city-light-poles-mountaintops-and-ecological-field-sites-on-ten-years-of-putting-ai-enabled-sensors-in-the-field-from-chicago-s-array-of-things-to-the-sage-cyberinfrastructure",
           title: 'Gave a NASA Tuesday Tip Talk, From Array of Things to Sage: A...',
           description: "",
-          section: "News",},{id: "news-sc26-comes-to-chicago-our-group-has-10-papers-4-posters-and-an-art-of-hpc-piece",
-          title: 'SC26 Comes to Chicago: Our Group has 10 Papers, 4 Posters, and an...',
+          section: "News",},{id: "news-sc26-comes-to-chicago-26-contributions-from-the-evl-hpc-group-and-uic",
+          title: 'SC26 Comes to Chicago: 26 Contributions from the EVL/HPC Group and UIC',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2026_11_15-SC26/";
